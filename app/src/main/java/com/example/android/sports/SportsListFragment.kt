@@ -47,6 +47,9 @@ class SportsListFragment : Fragment() {
         val binding = FragmentSportsListBinding.bind(view)
 
         val slidingPaneLayout = binding.slidingPaneLayout
+        // Doesn't allow the user to swipe in the details pane on a smaller device using gestures
+        slidingPaneLayout.lockMode = SlidingPaneLayout.LOCK_MODE_LOCKED
+
         //Connect the slidingPaneLayout to the system back button
         requireActivity().onBackPressedDispatcher.addCallback(
             viewLifecycleOwner,
